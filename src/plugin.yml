@@ -1,0 +1,16 @@
+name: SoultideCore
+version: 1.0
+author: elliot5
+main: net.soultide.stcore.Main
+commands:
+   createsword:
+      description: Create a sword
+      usage: /createsword [name] [max-damage] [min-damage]
+
+permissions:
+  soultide.build:
+    description: Allows the user to build in the world
+  soultide.user:
+    description: Basic user permissions
+  soultide.admin:
+    description: Admin permissions.
