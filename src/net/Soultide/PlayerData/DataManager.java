@@ -3,6 +3,8 @@ package net.Soultide.PlayerData;
 import java.util.HashMap;
 import java.util.UUID;
 
+import org.bukkit.entity.Player;
+
 public class DataManager {
 
 	private static HashMap<UUID, PlayerData> DataList = new HashMap<UUID, PlayerData>();
@@ -15,12 +17,12 @@ public class DataManager {
 		//Save to SQL database
 	}
 	
-	public PlayerData getPlayerData(UUID id){
-		if(DataList.containsKey(id)) return DataList.get(id);
+	public PlayerData getPlayerData(Player p){
+		if(DataList.containsKey(p.getUniqueId())) return DataList.get(p.getUniqueId());
 		
 		//In the event of first login or no playerdata
-		PlayerData newData = new PlayerData(id);
-		DataList.put(id, newData);
+		PlayerData newData = new PlayerData(p);
+		DataList.put(p.getUniqueId(), newData);
 		return newData;
 	}
 }
