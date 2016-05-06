@@ -1,5 +1,7 @@
 package net.Soultide.Core;
 
+import net.Soultide.GUIs.AdminGUI;
+import net.Soultide.GUIs.GUI;
 import net.Soultide.GUIs.GUIListener;
 
 import org.bukkit.Bukkit;
@@ -14,6 +16,7 @@ public class Main extends JavaPlugin{
 		registerClasses();
 		registerListeners();
 		registerCommandExecutors();
+		addGUIs();
 	}
 	
 	public void onDisable(){
@@ -35,6 +38,10 @@ public class Main extends JavaPlugin{
 	
 	private void registerCommandExecutors(){
 		
+	}
+	
+	private void addGUIs(){
+		GUI.list.add(new AdminGUI());
 	}
 	
 }
