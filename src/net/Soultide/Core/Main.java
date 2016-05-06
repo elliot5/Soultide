@@ -1,6 +1,6 @@
 package net.Soultide.Core;
 
-import net.Solitude.GUIs.GUIListener;
+import net.Soultide.GUIs.GUIListener;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

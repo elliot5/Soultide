@@ -1,4 +1,4 @@
-package net.Solitude.GUIs;
+package net.Soultide.GUIs;
 
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;

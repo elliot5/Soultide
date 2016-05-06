@@ -1,4 +1,4 @@
-package net.Solitude.GUIs;
+package net.Soultide.GUIs;
 
 import net.Soultide.Core.Main;
 
