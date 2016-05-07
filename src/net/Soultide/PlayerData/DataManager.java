@@ -7,7 +7,8 @@ import org.bukkit.entity.Player;
 
 public class DataManager {
 
-	private static HashMap<UUID, PlayerData> DataList = new HashMap<UUID, PlayerData>();
+	private static HashMap<UUID, PlayerData> PlayerDataList = new HashMap<UUID, PlayerData>();
+	private static HashMap<UUID, CharacterData> CharacterDataList = new HashMap<UUID, CharacterData>();
 	
 	public void loadPlayerData(UUID id){
 		//Load from SQL database
@@ -17,12 +18,21 @@ public class DataManager {
 		//Save to SQL database
 	}
 	
-	public PlayerData getPlayerData(Player p){
-		if(DataList.containsKey(p.getUniqueId())) return DataList.get(p.getUniqueId());
+	public static PlayerData getPlayerData(Player p){
+		if(PlayerDataList.containsKey(p.getUniqueId())) return PlayerDataList.get(p.getUniqueId());
 		
 		//In the event of first login or no playerdata
 		PlayerData newData = new PlayerData(p);
-		DataList.put(p.getUniqueId(), newData);
+		PlayerDataList.put(p.getUniqueId(), newData);
+		return newData;
+	}
+	
+	public static CharacterData getCharacterData(Player p){
+		if(CharacterDataList.containsKey(p.getUniqueId())) return CharacterDataList.get(p.getUniqueId());
+		
+		//In the event of first character choice
+		CharacterData newData = new CharacterData(p);
+		CharacterDataList.put(p.getUniqueId(), newData);
 		return newData;
 	}
 }
