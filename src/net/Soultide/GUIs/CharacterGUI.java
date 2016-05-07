@@ -35,7 +35,7 @@ public class CharacterGUI implements GUI {
 	}
 
 	public void handleAction(Player p, ItemStack i, ClickType click) {
-		
+		//Make sure to save PlayerData and load CharacterData when they select a character
 	}
 	
 	public ItemStack createItemStack(CharacterData cd){
